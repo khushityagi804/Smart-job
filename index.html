@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Job</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Smart Job</h1>
+  </header>
+
+  <main class="site-main">
+    <section id="authSection">
+      <section class="hero">
+        <div class="hero-content">
+          <h2 class="hero-title">Discover opportunities. Build your career.</h2>
+          <p class="hero-subtitle">Students find internships and jobs. Recruiters hire faster. Admins keep everything running smoothly.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn" data-tab-jump="student">Get started as Student</a>
+            <a href="#" class="btn secondary" data-tab-jump="recruiter">Hire talent</a>
+          </div>
+        </div>
+        <div class="hero-illustration" aria-hidden="true"></div>
+      </section>
+      <h2>Authentication</h2>
+      <div class="tabs">
+        <button class="tab-button" data-tab="student">Student</button>
+        <button class="tab-button" data-tab="recruiter">Recruiter</button>
+        <button class="tab-button" data-tab="admin">Admin</button>
+      </div>
+
+      <div class="tab-content" id="tab-student">
+        <div class="card-grid">
+          <div class="card">
+            <h3>Student Signup</h3>
+            <form id="studentSignupForm">
+              <label>Name<input name="name" required /></label>
+              <label>Email<input name="email" type="email" required /></label>
+              <label>Password<input name="password" type="password" required minlength="6" /></label>
+              <button type="submit">Create Account</button>
+            </form>
+          </div>
+          <div class="card">
+            <h3>Student Login</h3>
+            <form id="studentLoginForm">
+              <label>Email<input name="email" type="email" required /></label>
+              <label>Password<input name="password" type="password" required /></label>
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-recruiter" hidden>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Recruiter Signup</h3>
+            <form id="recruiterSignupForm">
+              <label>Company<input name="company" required /></label>
+              <label>Email<input name="email" type="email" required /></label>
+              <label>Password<input name="password" type="password" required minlength="6" /></label>
+              <button type="submit">Create Account</button>
+            </form>
+          </div>
+          <div class="card">
+            <h3>Recruiter Login</h3>
+            <form id="recruiterLoginForm">
+              <label>Email<input name="email" type="email" required /></label>
+              <label>Password<input name="password" type="password" required /></label>
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-admin" hidden>
+        <div class="card">
+          <h3>Admin Login</h3>
+          <form id="adminLoginForm">
+            <label>Email<input name="email" type="email" required /></label>
+            <label>Password<input name="password" type="password" required /></label>
+            <button type="submit">Login</button>
+          </form>
+          <p class="muted">A default admin will be seeded automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboardSection" hidden>
+      <div class="card">
+        <div class="row space-between">
+          <h2 id="dashboardTitle">Dashboard</h2>
+          <div>
+            <span id="currentUserLabel"></span>
+            <button id="logoutButton" class="secondary">Logout</button>
+          </div>
+        </div>
+        <div id="dashboardContent"></div>
+      </div>
+    </section>
+
+    <section id="adminPanelSection" hidden>
+      <div class="card">
+        <div class="row space-between">
+          <h2>Admin Panel</h2>
+          <div>
+            <span id="adminUserLabel"></span>
+            <button id="adminLogoutButton" class="secondary">Logout</button>
+          </div>
+        </div>
+        <div class="card" style="margin:12px 0;">
+          <h3>Analytics</h3>
+          <div id="analyticsCards" class="card-grid"></div>
+        </div>
+        <div id="adminUsers">
+          <h3>Users</h3>
+          <div class="table-responsive">
+            <table id="usersTable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Role</th>
+                  <th>Name/Company</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="adminJobs" style="margin-top:16px;">
+          <h3>Job Approvals</h3>
+          <div class="table-responsive">
+            <table id="jobsApprovalTable">
+              <thead>
+                <tr>
+                  <th>Job</th>
+                  <th>Company</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> Smart Job</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+  
+</body>
+</html>
+
